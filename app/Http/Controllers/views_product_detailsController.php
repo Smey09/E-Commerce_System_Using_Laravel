@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductModel;
+use App\Models\views_product_detailsModel;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class views_product_detailsController extends Controller
 {
-    public function index(){
-        $data = ProductModel::all();
-        return view("product_view.front", compact("data"));
+    public function index()
+    {
+        $data = views_product_detailsModel::all();
+        return view("views_product_details.front", compact("data"));
     }
     public function show($id){
-        $data = ProductModel::find($id);
+        $data = views_product_detailsModel::find($id);
         return view("product_view.display", compact("data"));
     }
     public function create(){ //the name cannot be changed
@@ -26,11 +27,11 @@ class ProductController extends Controller
             "pro_images" => "required",
         ]);
 
-        ProductModel::create($request->all());
+        views_product_detailsModel::create($request->all());
         return redirect()->route("product.index");
     }
     public function edit($id){ //the name cannot be changed
-        $item = ProductModel::find($id);
+        $item = views_product_detailsModel::find($id);
         return view("product_view.change", compact("item"));
     }
 
@@ -43,14 +44,13 @@ class ProductController extends Controller
             "pro_images" => "required",
         ]);
 
-        ProductModel::find($id)->update($request->all());
+        views_product_detailsModel::find($id)->update($request->all());
 
         return redirect()->route("product.index");
     }
 
     public function destroy($id){
-        ProductModel::find($id)->delete();
+        views_product_detailsModel::find($id)->delete();
         return redirect()->route("product.index");
     }
-
 }

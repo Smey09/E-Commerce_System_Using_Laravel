@@ -19,7 +19,7 @@
             <div class="col-sm-auto bg-light sticky-top">
                 <ul class="list-group">
                     <a href="/">
-                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-2">
+                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-calendar2-check-fill" viewBox="0 0 16 16">
                                     <path
@@ -41,7 +41,7 @@
                         </li>
                     </a>
                     <a href="/product">
-                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-amazon" viewBox="0 0 16 16">
                                     <path
@@ -53,7 +53,7 @@
                             </i>
                         </li>
                     </a>
-                    <a href="/orders_views">
+                    <a href="orders_views">
                         <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
@@ -159,6 +159,11 @@
                                 Admin
                             </i>
                         </a>
+                        {{-- <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -173,10 +178,18 @@
                                             <a class="nav-link active" aria-current="page" href="#">Active</a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Discount</a>
-                                            {{-- <button>Discount</button> --}}
-                                        </li>
+                                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                                href="#" role="button" aria-expanded="false">Dropdown</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                            </ul>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Link</a>
@@ -191,73 +204,151 @@
                                         <button class="btn btn-outline-success" type="submit">Search</button>
                                     </form>
                                 </ul>
+
                             </div>
                         </div>
                     </nav>
-                    <div class="container">
-                        <div class="content">
-                            <h1>Add new Product</h1>
-                            <form action="{{ route('product.store') }}" method="post">
-                                @csrf
-                                @method('POST')
-                                <div class="table-responsive">
-                                    <table class="table table-primary">
-                                        <tbody>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Tile</label>
-                                                    <input type="text" class="form-control" name="pro_name"
-                                                        id="pro_name" aria-describedby="helpId"
-                                                        placeholder="Enter Medel Name" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Type Of
-                                                        Product</label>
-                                                    <input type="text" class="form-control" name="pro_type"
-                                                        id="pro_type" aria-describedby="helpId"
-                                                        placeholder="Enter type" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating">Price</label>
-                                                    <input type="text" class="form-control is-invalid"
-                                                        name = "pro_price" id="pro_price" aria-describedby="helpId"
-                                                        placeholder="Enter Price" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating"> Please Put url
-                                                        link
-                                                        here !</label>
-                                                    <input type="text" class="form-control" name = "pro_images"
-                                                        id="pro_images" aria-describedby="helpId"
-                                                        placeholder="Put URL here!" />
-                                                </div>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="ratio ratio-21x6">
+                                <div class="card">
+                                    <img src="https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?p=1"
+                                        class="card-img-top" alt="...">
+
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#"
+                                                class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2"
+                                                style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px">
+                                                Macbook Pro M2
+                                            </a></h5>
+                                        <p class="card-text">
+                                        <div data-bs-spy="scroll" data-bs-target="#navbar-example2"
+                                            data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
+                                            class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                                            <h4 id="scrollspyHeading1">Model:</h4>
+                                            <p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="left" data-bs-content="Left popover">
+                                                    Macbook Pro M2 16"
+                                                </button>
+                                            </p>
+                                            <h4 id="scrollspyHeading2">Price</h4>
+                                            <p>
+                                                <a tabindex="0" class="btn btn-lg btn-danger" role="button"
+                                                    data-bs-toggle="popover" data-bs-trigger="focus"
+                                                    data-bs-title="Dismissible popover"
+                                                    data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible
+                                                    1899$</a>
+                                            </p>
+                                            <h4 id="scrollspyHeading3">Space</h4>
+                                            <p><button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="top" data-bs-content="Top popover">
+                                                    Ram 16BG
+                                                </button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="right" data-bs-content="Right popover">
+                                                    SSD 1TB
+                                                </button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="bottom" data-bs-content="Bottom popover">
+                                                    16" + 120HZ + 3K
+                                                </button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="left" data-bs-content="Left popover">
+                                                    Chip M2 Pro
+                                                </button>
+                                            </p>
+                                            <h4 id="scrollspyHeading4">Port</h4>
+                                            <p><button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="top" data-bs-content="Top popover">
+                                                    3 Thunderbolt 4 ports
+                                                </button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="right" data-bs-content="Right popover">
+                                                    HDMI
+                                                </button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="bottom" data-bs-content="Bottom popover">
+                                                    SDXC card slot
+                                                </button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="left" data-bs-content="Left popover">
+                                                    MagSafe 3
+                                                </button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="left" data-bs-content="Left popover">
+                                                    Headphone jack
+                                                </button>
+
+                                            </p>
+                                            <h4 id="scrollspyHeading5">Charger</h4>
+                                            <p> <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="left" data-bs-content="Left popover">
+                                                    140W USB-C
+                                                </button></p>
+                                            <h4 id="scrollspyHeading5">Max Resolution</h4>
+                                            <p> <button type="button" class="btn btn-secondary"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="left" data-bs-content="Left popover">
+                                                    3,456 x 2,234
+                                                </button></p>
+                                        </div>
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                        <a href="#" class="btn btn-primary">Cantact Us</a>
+                                    </div>
                                 </div>
-
-                                <button type="submit" class="btn btn-primary"> <a
-                                        href="{{ route('product.index') }}"> </a> Add</button>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="{{ route('product.index') }}"role="button">CNACEL</a>
-                            </form>
-
+                            </div>
                         </div>
+                        <div class="row footer">
+                            <div class="col-sm-12 text-center">
+                                <h1>
+
+                                </h1>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="/"><button type="button" class="btn btn-primary">Home Page</button></a>
+                            <a href="/st"><button type="button" class="btn btn-primary">1</button></a>
+                            <a href="/customer"><button type="button" class="btn btn-primary">2</button></a>
+                            <a href="#"><button type="button" class="btn btn-primary">3</button></a>
+                            <a href="#"><button type="button" class="btn btn-primary">4</button></a>
+                            <a href="#"><button type="button" class="btn btn-primary">5</button></a>
+                            {{-- <button type="button" class="btn btn-secondary">Secondary</button>
+                        <button type="button" class="btn btn-success">Success</button>
+                        <button type="button" class="btn btn-danger">Danger</button>
+                        <button type="button" class="btn btn-warning">Warning</button>
+                        <button type="button" class="btn btn-info">Info</button>
+                        <button type="button" class="btn btn-light">Light</button>
+                        <button type="button" class="btn btn-dark">Dark</button> --}}
+                        </div>
+                        <div class="row footer">
+                            <div class="col-sm-12 text-center">
+                                <p class="text-muted">Copyright © 2024 Dashboard System, ICT. Student Assignment at
+                                    Norton
+                                    University
+                                </p>
+                            </div>
+                        </div>
+                        <! -- Body page -->
                     </div>
-                    <! -- Body page -->
             </div>
         </div>
-    </div>
-    <div class="row footer">
+        {{-- <div class="row footer">
         <div class="col-sm-12 text-center">
             <p class="text-muted">Copyright © 2024 Dashboard System, ICT. Student Assignment at Norton University
             </p>
         </div>
-    </div>
+    </div> --}}
     </div>

@@ -41,7 +41,7 @@
                         </li>
                     </a>
                     <a href="/product">
-                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-amazon" viewBox="0 0 16 16">
                                     <path
@@ -54,7 +54,7 @@
                         </li>
                     </a>
                     <a href="/orders_views">
-                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
                                     <path
@@ -118,11 +118,10 @@
                     <ul
                         class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
                         <li>
-                            <a href="/product" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
-                                data-bs-placement="right" data-bs-original-title="Products">
+                            <a href="/product" class="nav-link py-3 px-2" title="" order-bs-toggle="tooltip"
+                                order-bs-placement="right" order-bs-original-title="Products">
                                 <i class="bi-heart fs-1">
-
-                                    <button type="button" class="btn btn-primary"><svg
+                                    <button type="button" class="btn btn-success"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-database-fill-add" viewBox="0 0 16 16">
                                             <path
@@ -132,14 +131,12 @@
                                         </svg>
                                         New Product</button>
                                 </i>
-
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
-                                data-bs-placement="right" data-bs-original-title="Customers">
+                            <a href="#" class="nav-link py-3 px-2" title="" order-bs-toggle="tooltip"
+                                order-bs-placement="right" order-bs-original-title="Customers">
                                 <i class="bi-people fs-1">
-
                                     <button type="button" class="btn btn-warning"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-substack" viewBox="0 0 16 16">
@@ -154,7 +151,7 @@
                     <div class="dropdown">
                         <a href="/st"
                             class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
-                            id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                            id="dropdownUser3" order-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi-person-circle h2">
                                 Admin
                             </i>
@@ -163,91 +160,92 @@
                 </div>
             </div>
             <div class="col-sm p-3 min-vh-100">
-                <! -- Body page -->
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <div class="container-fluid">
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Discount</a>
-                                            {{-- <button>Discount</button> --}}
-                                        </li>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                                        </li>
-                                    </ul>
-                                    <form class="d-flex" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
+
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Discount</a>
+                                        {{-- <button>Discount</button> --}}
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                    </li>
                                 </ul>
-                            </div>
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </ul>
                         </div>
-                    </nav>
-                    <div class="container">
-                        <div class="content">
-                            <h1>Add new Product</h1>
-                            <form action="{{ route('product.store') }}" method="post">
-                                @csrf
-                                @method('POST')
-                                <div class="table-responsive">
-                                    <table class="table table-primary">
-                                        <tbody>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Tile</label>
-                                                    <input type="text" class="form-control" name="pro_name"
-                                                        id="pro_name" aria-describedby="helpId"
-                                                        placeholder="Enter Medel Name" />
+                    </div>
+                </nav>
+
+                <! -- Body page -->
+                    <h1>Orders_view_display</h1>
+                    <div class="ratio ratio-21x6">
+                        <div class="card">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="{{ $order->pro_images }}" class="card-img-top"
+                                                alt="Problem with url images ! (This Model Don't have image display)">
+                                            <div class="container text-center">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">{{ $order->pro_name }}<p></p><a
+                                                            href="#"
+                                                            class="btn btn-warning">{{ $order->pro_price }}</a></h5>
+                                                    <p class="card-text">{{ $order->pro_type }}</p>
+                                                    <a href="/orders_views" class="btn btn-primary">Buy Now</a>
                                                 </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Type Of
-                                                        Product</label>
-                                                    <input type="text" class="form-control" name="pro_type"
-                                                        id="pro_type" aria-describedby="helpId"
-                                                        placeholder="Enter type" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating">Price</label>
-                                                    <input type="text" class="form-control is-invalid"
-                                                        name = "pro_price" id="pro_price" aria-describedby="helpId"
-                                                        placeholder="Enter Price" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating"> Please Put url
-                                                        link
-                                                        here !</label>
-                                                    <input type="text" class="form-control" name = "pro_images"
-                                                        id="pro_images" aria-describedby="helpId"
-                                                        placeholder="Put URL here!" />
-                                                </div>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="container text-center">
+                                                <h4>Detail About {{ $order->pro_name }}</h4>
+                                            </div>
+                                            <div class="alert alert-success" role="alert">
+                                                Price : {{ $order->pro_price }}
+                                            </div>
+                                            <div class="alert alert-primary" role="alert">
+                                                Chip :
+                                            </div>
+                                            <div class="alert alert-secondary" role="alert">
+                                                Price:
+                                            </div>
+                                            <div class="alert alert-success" role="alert">
+                                                Resolution
+                                            </div>
+                                            <div class="alert alert-danger" role="alert">
+                                                Chip
+                                            </div>
+                                            <div class="alert alert-warning" role="alert">
+                                                Warenty
+                                            </div>
+                                            <div class="alert alert-success" role="alert">
+                                                Screen Size :
+                                            </div>
+                                            <div class="alert alert-primary" role="alert">
+                                                Chip :
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <button type="submit" class="btn btn-primary"> <a
-                                        href="{{ route('product.index') }}"> </a> Add</button>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="{{ route('product.index') }}"role="button">CNACEL</a>
-                            </form>
-
+                            </div>
                         </div>
                     </div>
                     <! -- Body page -->

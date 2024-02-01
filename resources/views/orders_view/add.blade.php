@@ -163,91 +163,40 @@
                 </div>
             </div>
             <div class="col-sm p-3 min-vh-100">
-                <! -- Body page -->
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <div class="container-fluid">
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Discount</a>
-                                            {{-- <button>Discount</button> --}}
-                                        </li>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                                        </li>
-                                    </ul>
-                                    <form class="d-flex" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Discount</a>
+                                        {{-- <button>Discount</button> --}}
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                    </li>
                                 </ul>
-                            </div>
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </ul>
                         </div>
-                    </nav>
+                    </div>
+                </nav>
+                <! -- Body page -->
                     <div class="container">
                         <div class="content">
-                            <h1>Add new Product</h1>
-                            <form action="{{ route('product.store') }}" method="post">
-                                @csrf
-                                @method('POST')
-                                <div class="table-responsive">
-                                    <table class="table table-primary">
-                                        <tbody>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Tile</label>
-                                                    <input type="text" class="form-control" name="pro_name"
-                                                        id="pro_name" aria-describedby="helpId"
-                                                        placeholder="Enter Medel Name" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Type Of
-                                                        Product</label>
-                                                    <input type="text" class="form-control" name="pro_type"
-                                                        id="pro_type" aria-describedby="helpId"
-                                                        placeholder="Enter type" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating">Price</label>
-                                                    <input type="text" class="form-control is-invalid"
-                                                        name = "pro_price" id="pro_price" aria-describedby="helpId"
-                                                        placeholder="Enter Price" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating"> Please Put url
-                                                        link
-                                                        here !</label>
-                                                    <input type="text" class="form-control" name = "pro_images"
-                                                        id="pro_images" aria-describedby="helpId"
-                                                        placeholder="Put URL here!" />
-                                                </div>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary"> <a
-                                        href="{{ route('product.index') }}"> </a> Add</button>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="{{ route('product.index') }}"role="button">CNACEL</a>
-                            </form>
-
+                            <h1>Add new Order</h1>
                         </div>
                     </div>
                     <! -- Body page -->

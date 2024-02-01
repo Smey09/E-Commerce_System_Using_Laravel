@@ -19,7 +19,7 @@
             <div class="col-sm-auto bg-light sticky-top">
                 <ul class="list-group">
                     <a href="/">
-                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-2">
+                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-calendar2-check-fill" viewBox="0 0 16 16">
                                     <path
@@ -29,7 +29,7 @@
                             </i>
                         </li>
                     </a>
-                    <a href="/customer">
+                    <a href="/cus">
                         <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
@@ -41,7 +41,7 @@
                         </li>
                     </a>
                     <a href="/product">
-                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-amazon" viewBox="0 0 16 16">
                                     <path
@@ -53,7 +53,7 @@
                             </i>
                         </li>
                     </a>
-                    <a href="/orders_views">
+                    <a href="#">
                         <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
@@ -113,6 +113,8 @@
                             </i>
                         </li>
                     </a>
+
+                    <li class="list-group-item">A third item</li>
                 </ul>
                 <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
                     <ul
@@ -173,10 +175,18 @@
                                             <a class="nav-link active" aria-current="page" href="#">Active</a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Discount</a>
-                                            {{-- <button>Discount</button> --}}
-                                        </li>
+                                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                                href="#" role="button" aria-expanded="false">Dropdown</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                            </ul>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Link</a>
@@ -194,70 +204,171 @@
                             </div>
                         </div>
                     </nav>
-                    <div class="container">
-                        <div class="content">
-                            <h1>Add new Product</h1>
-                            <form action="{{ route('product.store') }}" method="post">
-                                @csrf
-                                @method('POST')
-                                <div class="table-responsive">
-                                    <table class="table table-primary">
-                                        <tbody>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Tile</label>
-                                                    <input type="text" class="form-control" name="pro_name"
-                                                        id="pro_name" aria-describedby="helpId"
-                                                        placeholder="Enter Medel Name" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Type Of
-                                                        Product</label>
-                                                    <input type="text" class="form-control" name="pro_type"
-                                                        id="pro_type" aria-describedby="helpId"
-                                                        placeholder="Enter type" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating">Price</label>
-                                                    <input type="text" class="form-control is-invalid"
-                                                        name = "pro_price" id="pro_price" aria-describedby="helpId"
-                                                        placeholder="Enter Price" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating"> Please Put url
-                                                        link
-                                                        here !</label>
-                                                    <input type="text" class="form-control" name = "pro_images"
-                                                        id="pro_images" aria-describedby="helpId"
-                                                        placeholder="Put URL here!" />
-                                                </div>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div class="container text-center">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?p=1"
+                                            class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Macbook Pro M2 16"<p></p><a href="#"
+                                                    class="btn btn-warning">1500$</a></h5>
+                                            <p class="card-text">New MacBook Pro features up to 6x faster performance
+                                                than
+                                                fastest Intel-based MacBook Pro and support for up to 96GB of unified
+                                                memory for
+                                                demanding pro workflows.</p>
+                                            <a href="#" class="btn btn-primary">Buy Now</a>
+                                            <a href="/views_product_details" class="btn btn-danger">Views Ditail</a>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?p=1"
+                                            class="card-img-top" alt="...">
 
-                                <button type="submit" class="btn btn-primary"> <a
-                                        href="{{ route('product.index') }}"> </a> Add</button>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="{{ route('product.index') }}"role="button">CNACEL</a>
-                            </form>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Macbook Pro M2 16"<p></p><a href="#"
+                                                    class="btn btn-warning">1500$</a></h5>
+                                            <p class="card-text">New MacBook Pro features up to 6x faster performance
+                                                than
+                                                fastest Intel-based MacBook Pro and support for up to 96GB of unified
+                                                memory for
+                                                demanding pro workflows.</p>
+                                            <a href="#" class="btn btn-primary">Buy Now</a>
+                                            <a href="/views_product_details" class="btn btn-danger">Views Ditail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?p=1"
+                                                class="card-img-top" alt="...">
 
+                                            <div class="card-body">
+                                                <h5 class="card-title">Macbook Pro M2 16"<p></p><a href="#"
+                                                        class="btn btn-warning">1500$</a></h5>
+                                                <p class="card-text">New MacBook Pro features up to 6x faster
+                                                    performance
+                                                    than
+                                                    fastest Intel-based MacBook Pro and support for up to 96GB of
+                                                    unified
+                                                    memory for
+                                                    demanding pro workflows.</p>
+                                                <a href="#" class="btn btn-primary">Buy Now</a>
+                                                <a href="/views_product_details" class="btn btn-danger">Views
+                                                    Ditail</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div class="container text-center">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?p=1"
+                                            class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Macbook Pro M2 16"<p></p><a href="#"
+                                                    class="btn btn-warning">1500$</a></h5>
+                                            <p class="card-text">New MacBook Pro features up to 6x faster performance
+                                                than
+                                                fastest Intel-based MacBook Pro and support for up to 96GB of unified
+                                                memory for
+                                                demanding pro workflows.</p>
+                                            <a href="#" class="btn btn-primary">Buy Now</a>
+                                            <a href="/views_product_details" class="btn btn-danger">Views Ditail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?p=1"
+                                            class="card-img-top" alt="...">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Macbook Pro M2 16"<p></p><a href="#"
+                                                    class="btn btn-warning">1500$</a></h5>
+                                            <p class="card-text">New MacBook Pro features up to 6x faster performance
+                                                than
+                                                fastest Intel-based MacBook Pro and support for up to 96GB of unified
+                                                memory for
+                                                demanding pro workflows.</p>
+                                            <a href="#" class="btn btn-primary">Buy Now</a>
+                                            <a href="/views_product_details" class="btn btn-danger">Views Ditail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?p=1"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Macbook Pro M2 16"<p></p><a href="#"
+                                                        class="btn btn-warning">1500$</a></h5>
+                                                <p class="card-text">New MacBook Pro features up to 6x faster
+                                                    performance
+                                                    than
+                                                    fastest Intel-based MacBook Pro and support for up to 96GB of
+                                                    unified
+                                                    memory for
+                                                    demanding pro workflows.</p>
+                                                <a href="#" class="btn btn-primary">Buy Now</a>
+                                                <a href="/views_product_details" class="btn btn-danger">Views
+                                                    Ditail</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row footer">
+                        <div class="col-sm-12 text-center">
+                            <h1>
+
+                            </h1>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="/"><button type="button" class="btn btn-primary">Home Page</button></a>
+                        <a href="/macbook_views"><button type="button" class="btn btn-danger">Macbook</button></a>
+                        <a href="/asus_views"><button type="button" class="btn btn-primary">Asus</button></a>
+                        <a href="/pro"><button type="button" class="btn btn-primary">3</button></a>
+                        <a href="#"><button type="button" class="btn btn-primary">4</button></a>
+                        <a href="#"><button type="button" class="btn btn-primary">5</button></a>
+                        {{-- <button type="button" class="btn btn-secondary">Secondary</button>
+                        <button type="button" class="btn btn-success">Success</button>
+                        <button type="button" class="btn btn-danger">Danger</button>
+                        <button type="button" class="btn btn-warning">Warning</button>
+                        <button type="button" class="btn btn-info">Info</button>
+                        <button type="button" class="btn btn-light">Light</button>
+                        <button type="button" class="btn btn-dark">Dark</button> --}}
+                    </div>
+                    <div class="row footer">
+                        <div class="col-sm-12 text-center">
+                            <p class="text-muted">Copyright © 2024 Dashboard System, ICT. Student Assignment at Norton
+                                University
+                            </p>
                         </div>
                     </div>
                     <! -- Body page -->
             </div>
         </div>
     </div>
-    <div class="row footer">
+    {{-- <div class="row footer">
         <div class="col-sm-12 text-center">
             <p class="text-muted">Copyright © 2024 Dashboard System, ICT. Student Assignment at Norton University
             </p>
         </div>
-    </div>
+    </div> --}}
     </div>

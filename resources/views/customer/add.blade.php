@@ -30,7 +30,7 @@
                         </li>
                     </a>
                     <a href="/customer">
-                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
                                     <path
@@ -41,7 +41,7 @@
                         </li>
                     </a>
                     <a href="/product">
-                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item " aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-amazon" viewBox="0 0 16 16">
                                     <path
@@ -54,7 +54,7 @@
                         </li>
                     </a>
                     <a href="/orders_views">
-                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item " aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
                                     <path
@@ -118,7 +118,7 @@
                     <ul
                         class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
                         <li>
-                            <a href="/product" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
+                            <a href="/customer" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
                                 data-bs-placement="right" data-bs-original-title="Products">
                                 <i class="bi-heart fs-1">
 
@@ -163,41 +163,42 @@
                 </div>
             </div>
             <div class="col-sm p-3 min-vh-100">
-                <! -- Body page -->
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <div class="container-fluid">
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Discount</a>
-                                            {{-- <button>Discount</button> --}}
-                                        </li>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                                        </li>
-                                    </ul>
-                                    <form class="d-flex" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Discount</a>
+                                        {{-- <button>Discount</button> --}}
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                    </li>
                                 </ul>
-                            </div>
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </ul>
                         </div>
-                    </nav>
+                    </div>
+                </nav>
+                <! -- Body page -->
+
                     <div class="container">
                         <div class="content">
-                            <h1>Add new Product</h1>
-                            <form action="{{ route('product.store') }}" method="post">
+                            <h1>Add new Customer</h1>
+                            <form action="{{ route('customer.store') }}" method="post">
                                 @csrf
                                 @method('POST')
                                 <div class="table-responsive">
@@ -205,30 +206,54 @@
                                         <tbody>
                                             <tr>
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Tile</label>
-                                                    <input type="text" class="form-control" name="pro_name"
-                                                        id="pro_name" aria-describedby="helpId"
-                                                        placeholder="Enter Medel Name" />
+                                                    <label for="" class="form-label">Customer Name</label>
+                                                    <input type="text" class="form-control" name="Cus_Name"
+                                                        id="Cus_Name" aria-describedby="helpId"
+                                                        placeholder="Enter Customer Name" />
                                                 </div>
                                             </tr>
                                             <tr>
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Type Of
-                                                        Product</label>
-                                                    <input type="text" class="form-control" name="pro_type"
-                                                        id="pro_type" aria-describedby="helpId"
-                                                        placeholder="Enter type" />
+                                                    <label for="" class="form-label">Phone
+                                                        number</label>
+                                                    <input type="text" class="form-control" name="Cus_Tel"
+                                                        id="Cus_Tel" aria-describedby="helpId"
+                                                        placeholder="Enter Customer Phone number" />
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <div class="mb-3">
+                                                    <label for="" class="form-floating">Gender</label>
+                                                    <input type="text" class="form-control" name = "Cus_Gender"
+                                                        id="Cus_Gender" aria-describedby="helpId"
+                                                        placeholder="Put Gender" />
+                                                </div>
+                                            </tr>
+                                            <tr>
+                                                <div class="mb-3">
+                                                    <label for="" class="form-floating">Model Name</label>
+                                                    <input type="text" class="form-control"
+                                                        name = "Cus_Order_model" id="Cus_Order_model"
+                                                        aria-describedby="helpId" placeholder="Put Model Name" />
                                                 </div>
                                             </tr>
                                             <tr>
                                                 <div class="mb-3">
                                                     <label for="" class="form-floating">Price</label>
-                                                    <input type="text" class="form-control is-invalid"
-                                                        name = "pro_price" id="pro_price" aria-describedby="helpId"
-                                                        placeholder="Enter Price" />
+                                                    <input type="text" class="form-control"
+                                                        name = "Cus_Order_price" id="Cus_Order_price"
+                                                        aria-describedby="helpId" placeholder="Put Price" />
                                                 </div>
                                             </tr>
                                             <tr>
+                                                <div class="mb-3">
+                                                    <label for="" class="form-floating">Date</label>
+                                                    <input type="text" class="form-control"
+                                                        name = "Cus_Order_date" id="Cus_Order_date"
+                                                        aria-describedby="helpId" placeholder="Put Date" />
+                                                </div>
+                                            </tr>
+                                            {{-- <tr>
                                                 <div class="mb-3">
                                                     <label for="" class="form-floating"> Please Put url
                                                         link
@@ -237,27 +262,27 @@
                                                         id="pro_images" aria-describedby="helpId"
                                                         placeholder="Put URL here!" />
                                                 </div>
-                                            </tr>
+                                            </tr> --}}
                                         </tbody>
                                     </table>
                                 </div>
-
+                                <a name="" id="" class="btn btn-primary"
+                                    href="{{ route('customer.index') }}"role="button">CNACEL</a>
                                 <button type="submit" class="btn btn-primary"> <a
-                                        href="{{ route('product.index') }}"> </a> Add</button>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="{{ route('product.index') }}"role="button">CNACEL</a>
+                                        href="{{ route('customer.index') }}"> </a> Comform</button>
                             </form>
 
                         </div>
                     </div>
+
                     <! -- Body page -->
             </div>
         </div>
     </div>
-    <div class="row footer">
+    {{-- <div class="row footer">
         <div class="col-sm-12 text-center">
             <p class="text-muted">Copyright © 2024 Dashboard System, ICT. Student Assignment at Norton University
             </p>
         </div>
-    </div>
+    </div> --}}
     </div>

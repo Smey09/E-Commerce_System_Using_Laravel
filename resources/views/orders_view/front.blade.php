@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-auto bg-light sticky-top">
@@ -41,7 +40,7 @@
                         </li>
                     </a>
                     <a href="/product">
-                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
+                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-amazon" viewBox="0 0 16 16">
                                     <path
@@ -53,8 +52,8 @@
                             </i>
                         </li>
                     </a>
-                    <a href="/orders_views">
-                        <li class="list-group-item" aria-current="true"><i class="bi-bootstrap fs-1">
+                    <a href="#">
+                        <li class="list-group-item active" aria-current="true"><i class="bi-bootstrap fs-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
                                     <path
@@ -118,13 +117,12 @@
                     <ul
                         class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
                         <li>
-                            <a href="/product" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
-                                data-bs-placement="right" data-bs-original-title="Products">
+                            <a href="/orders_view" class="nav-link py-3 px-2" title="" order-bs-toggle="tooltip"
+                                order-bs-placement="right" order-bs-original-title="Products">
                                 <i class="bi-heart fs-1">
-
-                                    <button type="button" class="btn btn-primary"><svg
+                                    <button type="button" class="btn btn-success"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-database-fill-add" viewBox="0 0 16 16">
+                                            fill="currentColor" class="bi bi-orderbase-fill-add" viewBox="0 0 16 16">
                                             <path
                                                 d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0M8 1c-1.573 0-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4s.875 1.755 1.904 2.223C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777C13.125 5.755 14 5.007 14 4s-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1" />
                                             <path
@@ -132,14 +130,12 @@
                                         </svg>
                                         New Product</button>
                                 </i>
-
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
-                                data-bs-placement="right" data-bs-original-title="Customers">
+                            <a href="#" class="nav-link py-3 px-2" title="" order-bs-toggle="tooltip"
+                                order-bs-placement="right" order-bs-original-title="Customers">
                                 <i class="bi-people fs-1">
-
                                     <button type="button" class="btn btn-warning"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-substack" viewBox="0 0 16 16">
@@ -154,7 +150,7 @@
                     <div class="dropdown">
                         <a href="/st"
                             class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
-                            id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                            id="dropdownUser3" order-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi-person-circle h2">
                                 Admin
                             </i>
@@ -163,92 +159,98 @@
                 </div>
             </div>
             <div class="col-sm p-3 min-vh-100">
-                <! -- Body page -->
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <div class="container-fluid">
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Discount</a>
-                                            {{-- <button>Discount</button> --}}
-                                        </li>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                                        </li>
-                                    </ul>
-                                    <form class="d-flex" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Discount</a>
+                                        {{-- <button>Discount</button> --}}
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                    </li>
                                 </ul>
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <! -- Body page -->
+                    @foreach ($order as $x)
+                        <div id="carouselExampleCaptions" class="carousel slide">
+                            <div class="container text-center">
+                                <div class="row align-items-center">
+                                    <div class="ratio ratio-4x3">
+                                        <div>
+                                            <p>{{ $x->pro_id }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ $x->pro_name }}<p></p><a href="#"
+                                                        class="btn btn-warning">{{ $x->pro_price }}</a></h5>
+                                                <p class="card-text">{{ $x->pro_type }}</p>
+                                            </div>
+                                            <div class="alert alert-primary" role="alert">
+
+                                                {{-- <a href="{{ route('views_product_details.show', $x->pro_id) }}"
+                                                    class="btn btn-warning">Views
+                                                    Ditail</a> --}}
+
+                                                <a href="{{ route('product.show', $x->pro_id) }}"
+                                                    class="btn btn-warning">Views
+                                                    Ditail</a>
+
+                                                <a href="tel:+85599608096" class="btn btn-danger"><i
+                                                        class="bi bi-phone"></i>Call Us</a>
+                                                <a href="https://t.me/Smey_Pro" class="btn btn-danger"><i
+                                                        class="bi bi-phone"></i>Contact with Telegram</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <a href="{{ route('customer.create') }}" class="btn btn-primary">Buy
+                                                Now</a>
+                                            {{-- <a href="#" class="btn btn-primary">Buy Now</a> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="{{ $x->pro_images }}" class="card-img-top" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </nav>
-                    <div class="container">
-                        <div class="content">
-                            <h1>Add new Product</h1>
-                            <form action="{{ route('product.store') }}" method="post">
-                                @csrf
-                                @method('POST')
-                                <div class="table-responsive">
-                                    <table class="table table-primary">
-                                        <tbody>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Tile</label>
-                                                    <input type="text" class="form-control" name="pro_name"
-                                                        id="pro_name" aria-describedby="helpId"
-                                                        placeholder="Enter Medel Name" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-label">Type Of
-                                                        Product</label>
-                                                    <input type="text" class="form-control" name="pro_type"
-                                                        id="pro_type" aria-describedby="helpId"
-                                                        placeholder="Enter type" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating">Price</label>
-                                                    <input type="text" class="form-control is-invalid"
-                                                        name = "pro_price" id="pro_price" aria-describedby="helpId"
-                                                        placeholder="Enter Price" />
-                                                </div>
-                                            </tr>
-                                            <tr>
-                                                <div class="mb-3">
-                                                    <label for="" class="form-floating"> Please Put url
-                                                        link
-                                                        here !</label>
-                                                    <input type="text" class="form-control" name = "pro_images"
-                                                        id="pro_images" aria-describedby="helpId"
-                                                        placeholder="Put URL here!" />
-                                                </div>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary"> <a
-                                        href="{{ route('product.index') }}"> </a> Add</button>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="{{ route('product.index') }}"role="button">CNACEL</a>
-                            </form>
-
+                    @endforeach
+                    <div class="row footer">
+                        <div class="col-sm-12 text-center">
+                            <h1>
+                            </h1>
                         </div>
+                    </div>
+                    <div>
+                        <a href="/"><button type="button" class="btn btn-primary">Home Page</button></a>
+                        <a href="/macbook_views"><button type="button" class="btn btn-primary">Macbook</button></a>
+                        <a href="/asus_views"><button type="button" class="btn btn-primary">Asus</button></a>
+                        <a href="/pro"><button type="button" class="btn btn-primary">3</button></a>
+                        <a href="#"><button type="button" class="btn btn-primary">4</button></a>
+                        <a href="#"><button type="button" class="btn btn-primary">5</button></a>
                     </div>
                     <! -- Body page -->
             </div>
@@ -256,7 +258,8 @@
     </div>
     <div class="row footer">
         <div class="col-sm-12 text-center">
-            <p class="text-muted">Copyright © 2024 Dashboard System, ICT. Student Assignment at Norton University
+            <p class="text-muted">Copyright © 2024 Dashboard System, ICT. Student
+                Assignment at Norton University
             </p>
         </div>
     </div>
